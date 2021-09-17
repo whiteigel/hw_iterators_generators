@@ -31,7 +31,7 @@ class WikiArticle:
 
 
 if __name__ == '__main__':
+    article = WikiArticle(read_file, 0)
     with open(write_file, 'w') as f:
-        article = WikiArticle(read_file, 0)
         for country in article.__next__():
             f.writelines(country)
