@@ -9,7 +9,7 @@ class WikiArticle:
     def __init__(self, path, start):
         self.file = open(path, encoding='utf-8')
         self.json = json.load(self.file)
-        self.start = start
+        self.start = start - 1
 
     def __iter__(self):
         return self
