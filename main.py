@@ -19,9 +19,9 @@ class WikiArticle:
         if self.start == len(self.json):
             raise StopIteration
         self.country = self.json[self.start]['name']['common']
-        self.country = self.country.replace(' ', '_')
+        self.country_link = self.country.replace(' ', '_')
         wiki_url = 'https://en.wikipedia.org/wiki/'
-        country_page = wiki_url + self.country
+        country_page = wiki_url + self.country_link
         country_link_pair = f'{self.country}, {country_page} ' + ' \n'
         return country_link_pair
 
