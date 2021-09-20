@@ -1,16 +1,14 @@
-from hashlib import md5
+import hashlib
 
 read_file = 'countries_with_links.txt'
 write_file = 'hashes.txt'
 
-res = open(read_file, encoding='utf-8')
+res = open(read_file, 'rb')
 
 
 def gen_md5(input):
     for country in input:
-        data = md5(country.encode())
-        hash = data.hexdigest()
-        yield hash
+        yield hashlib.md5(country).hexdigest()
 
 
 with open(write_file, 'w') as output:
